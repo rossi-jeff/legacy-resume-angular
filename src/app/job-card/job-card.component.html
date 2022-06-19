@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{ job.Company }}</h4>
+        <div *ngIf="job.From && job.To">
+            <span>From:</span>
+            {{ job.From.Month }}
+            {{ job.From.Year }}
+            <span>To:</span>
+            {{ job.To.Month }}
+            {{ job.To.Year }}
+        </div>
+        <div *ngIf="address">
+            <span>Address:</span>
+            {{ address }}
+        </div>
+        <div *ngIf="job.Title">
+            <span>Title:</span>
+            {{ job.Title }}
+        </div>
+        <div *ngIf="job.Duties">
+            <span>Duties:</span>
+            {{ job.Duties }}
+        </div>
+    </div>
+</div>

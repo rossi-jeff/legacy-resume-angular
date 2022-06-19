@@ -1,0 +1,23 @@
+<div class="p-2">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Site</th>
+                <th>Type</th>
+                <th>Visit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let link of links">
+                <td>
+                    <strong>{{ link.Title }}</strong><br/>
+                    {{ link.Description }}
+                </td>
+                <td>{{ link.Type }}</td>
+                <td class="nowrap">
+                    <a href="{{ link.Url }}" target="_blank">Visit {{ link.Title }}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

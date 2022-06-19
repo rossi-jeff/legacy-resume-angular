@@ -1,0 +1,10 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb py-2 px-3">
+        <li class="breadcrumb-item" *ngFor="let crumb of trail">
+            <a *ngIf="crumb.href; else nolink" href="{{ crumb.href }}">{{ crumb.text }}</a>
+            <ng-template #nolink>
+                <strong>{{ crumb.text }}</strong>
+            </ng-template>
+        </li>
+    </ol>
+</nav>

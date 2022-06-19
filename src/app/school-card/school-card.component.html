@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{ school.Name }}</h4>
+        <div *ngIf="school.From && school.To">
+            <span>From:</span>
+            {{ school.From.Month }}
+            {{ school.From.Year }}
+            <span>To:</span>
+            {{ school.To.Month }}
+            {{ school.To.Year }}
+        </div>
+        <div *ngIf="address">
+            <span>Address:</span>
+            {{ address }}
+        </div>
+        <div *ngIf="school.Program">
+            <span>Program:</span>
+            {{ school.Program }}
+        </div>
+        <div *ngIf="school.Degree">
+            <span>Degree:</span>
+            {{ school.Degree }}
+        </div>
+    </div>
+</div>

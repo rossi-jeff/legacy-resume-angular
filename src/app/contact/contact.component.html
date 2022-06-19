@@ -1,0 +1,163 @@
+<app-bread-crumb-trail [trail]="trail"></app-bread-crumb-trail>
+<app-content-row *ngFor="let row of rows" [row]="row"></app-content-row>
+
+<div class="p-3">
+    <div class="accordion" id="contact-accordion">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Name
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#contact-accordion">
+            <div class="accordion-body">
+              
+            <div class="row">
+                <div class="col">
+                    <label for="Salutation" class="form-label">Salutation</label>
+                    <select id="Salutation" class="form-select" [(ngModel)]="contact.Name.Salutation">
+                        <option *ngFor="let opt of salutations" [value]="opt">{{ opt }}</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="First" class="form-label">First</label>
+                    <input type="text" class="form-control" id="First" [(ngModel)]="contact.Name.First" />
+                </div>
+                <div class="col">
+                    <label for="Middle" class="form-label">Middle</label>
+                    <input type="text" class="form-control" id="Middle" [(ngModel)]="contact.Name.Middle" />
+                </div>
+                <div class="col">
+                    <label for="Last" class="form-label">Last</label>
+                    <input type="text" class="form-control" id="Last" [(ngModel)]="contact.Name.Last" />
+                </div>
+                <div class="col">
+                    <label for="Suffix" class="form-label">Suffix</label>
+                    <input type="text" class="form-control" id="Suffix" [(ngModel)]="contact.Name.Suffix" />
+                </div>
+            </div>
+            
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Address
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#contact-accordion">
+            <div class="accordion-body">
+            
+            <div class="mb-3">
+                <label for="Street" class="form-label">Street</label>
+                <input type="text" class="form-control" id="Street" [(ngModel)]="contact.Address.Address" />
+            </div>
+
+            <div class="mb-3">
+                <label for="Suite" class="form-label">Suite</label>
+                <input type="text" class="form-control" id="Suite" [(ngModel)]="contact.Address.Suite" />
+            </div>
+              
+            <div class="row">
+                <div class="col">
+                    <label for="City" class="form-label">City</label>
+                    <input type="text" class="form-control" id="City" [(ngModel)]="contact.Address.City" />
+                </div>
+                <div class="col">
+                    <label for="State" class="form-label">State</label>
+                    <input type="text" class="form-control" id="State" [(ngModel)]="contact.Address.State" />
+                </div>
+                <div class="col">
+                    <label for="Zip" class="form-label">Zip</label>
+                    <input type="text" class="form-control" id="Zip" [(ngModel)]="contact.Address.Zip" />
+                </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Contact Methods
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#contact-accordion">
+            <div class="accordion-body">
+              
+            <div class="row">
+                <div class="col">
+                    <label for="PhoneType" class="form-label">Phone Type</label>
+                    <select id="PhoneType" class="form-select" [(ngModel)]="contact.PhoneType">
+                        <option *ngFor="let opt of phoneTypes" [value]="opt">{{ opt }}</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="Phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="Phone" [(ngModel)]="contact.Phone" />
+                </div>
+                <div class="col">
+                    <label for="EmailType" class="form-label">Email Type</label>
+                    <select id="EmailType" class="form-select" [(ngModel)]="contact.EmailType">
+                        <option *ngFor="let opt of emailTypes" [value]="opt">{{ opt }}</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="Email" [(ngModel)]="contact.Email" />
+                </div>
+                <div class="col">
+                    <label for="Preferred" class="form-label">Preferred</label>
+                    <select id="Preferred" class="form-select" [(ngModel)]="contact.Preferred">
+                        <option *ngFor="let opt of prefered" [value]="opt">{{ opt }}</option>
+                    </select>
+                </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Message
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#contact-accordion">
+                <div class="accordion-body">
+
+                <div class="mb-3">
+                    <label for="Subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="Subject" [(ngModel)]="contact.Subject" />
+                </div>
+
+                <div>
+                    <label for="Message" class="form-label">Message</label>
+                    <textarea id="Message" class="form-control" [(ngModel)]="contact.Message"></textarea>
+                </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Confirm
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#contact-accordion">
+              <div class="accordion-body">
+                <app-contact-confirm [contact]="contact"></app-contact-confirm>
+                <button type="button" class="btn btn-primary" (click)="send()">Send Contact Email</button>
+              </div>
+            </div>
+        </div>
+
+    </div>
+</div>

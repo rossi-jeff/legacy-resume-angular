@@ -1,0 +1,30 @@
+<div>
+	<div *ngIf="getName()" class="mb-3">
+		<span>Name:</span>
+		{{ getName() }}
+	</div>
+	<div *ngIf="getAddress()" class="mb-3">
+		<span>Address:</span>
+		{{ getAddress() }}
+	</div>
+	<div class="mb-3">
+		<span>Phone:</span>
+		{{ contact.Phone }}
+	</div>
+	<div class="mb-3">
+		<span>Email:</span>
+		{{ contact.Email }}
+	</div>
+	<div class="mb-3">
+		<span>Preferred:</span>
+		{{ contact.Preferred }}
+	</div>
+	<div class="mb-3">
+		<span>Subject:</span>
+		{{ contact.Subject }}
+	</div>
+	<div class="mb-3">
+		<span>Message:</span>
+		{{ contact.Message }}
+	</div>
+</div>

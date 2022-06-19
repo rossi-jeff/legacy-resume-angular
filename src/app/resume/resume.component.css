@@ -1,0 +1,14 @@
+#print-container {
+    padding: 1.5em 2em 1.5em 2em;
+    margin: 1em;
+    border: solid black 1px;
+}
+
+#print-container hr {
+    margin: 0.25em 0 1em 0;
+    border-top: solid black 1px;
+}
+
+.new-page {
+    page-break-after: always;
+}

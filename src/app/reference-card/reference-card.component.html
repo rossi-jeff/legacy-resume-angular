@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-body">
+        <a *ngIf="name" class="card-title" href="/references/{{ reference.UUID }}">{{ name }}</a>
+        <div *ngIf="reference.Company">
+            <span>Company:</span>
+            {{ reference.Company }}
+        </div>
+        <div *ngIf="reference.Title">
+            <span>Title:</span>
+            {{ reference.Title }}
+        </div>
+        <div *ngIf="address">
+            <span>Address:</span>
+            {{ address }}
+        </div>
+    </div>
+</div>

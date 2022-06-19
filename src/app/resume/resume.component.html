@@ -1,0 +1,116 @@
+<app-bread-crumb-trail [trail]="trail"></app-bread-crumb-trail>
+<app-content-row *ngFor="let row of rows" [row]="row"></app-content-row>
+<div class="card">
+    <div class="card-body">
+        <button class="btn mx-3" (click)="print()">Print</button>
+        <div id="print-container">
+            <strong>Jeff Rossi</strong>
+            <div>Software Developer</div>
+            <hr/>
+
+            <strong>Employment</strong>
+            <hr/>
+            <div class="mb-3" *ngFor="let job of data.jobs.getJobs">
+                <div>{{ job.Company }}</div>
+                <div *ngIf="job.From && job.To">
+                    <span>From:</span>
+                    {{ job.From.Month }}
+                    {{ job.From.Year }}
+                    <span>To:</span>
+                    {{ job.To.Month }}
+                    {{ job.To.Year }}
+                </div>
+                <div *ngIf="formatAddress(job.Address)">
+                    <span>Address:</span>
+                    {{ formatAddress(job.Address) }}
+                </div>
+                <div *ngIf="job.Title">
+                    <span>Title:</span>
+                    {{ job.Title }}
+                </div>
+                <div *ngIf="job.Duties">
+                    <span>Duties:</span>
+                    {{ job.Duties }}
+                </div>
+            </div>
+
+            <strong>Education</strong>
+            <hr/>
+            <div class="mb-3" *ngFor="let school of data.schools.getSchools">
+                <div>{{ school.Name }}</div>
+                <div *ngIf="school.From && school.To">
+                    <span>From:</span>
+                    {{ school.From.Month }}
+                    {{ school.From.Year }}
+                    <span>To:</span>
+                    {{ school.To.Month }}
+                    {{ school.To.Year }}
+                </div>
+                <div *ngIf="formatAddress(school.Address)">
+                    <span>Address:</span>
+                    {{ formatAddress(school.Address) }}
+                </div>
+                <div *ngIf="school.Program">
+                    <span>Program:</span>
+                    {{ school.Program }}
+                </div>
+                <div *ngIf="school.Degree">
+                    <span>Degree:</span>
+                    {{ school.Degree }}
+                </div>
+            </div>
+
+            <div class="new-page"></div>
+
+            <strong>Jeff Rossi</strong>
+            <div>Software Developer</div>
+            <hr/>
+
+            <strong>References</strong>
+            <hr/>
+            <div class="mb-3" *ngFor="let reference of data.references.getReferences">
+                <div>{{ formatName(reference.Name) }}</div>
+                <div *ngIf="reference.Company">
+                    <span>Company:</span>
+                    {{ reference.Company }}
+                </div>
+                <div *ngIf="reference.Title">
+                    <span>Title:</span>
+                    {{ reference.Title }}
+                </div>
+                <div *ngIf="formatAddress(reference.Address)">
+                    <span>Address:</span>
+                    {{ formatAddress(reference.Address) }}
+                </div>
+                <div *ngIf="reference.Phones && reference.Phones.length > 0">
+                    <span>Phone:</span>
+                    <span style="margin-left: 1em;" *ngFor="let phone of reference.Phones">
+                        {{ phone.Number }}
+                        <span style="margin-left: 1em;" *ngIf="phone.Extension">ext: {{ phone.Extension }}</span>
+                    </span>
+                </div>
+                <div *ngIf="reference.Emails && reference.Emails.length > 0">
+                    <span>Email:</span>
+                    <span style="margin-left: 1em;" *ngFor="let email of reference.Emails">{{ email.Address }}</span>
+                </div>
+            </div>
+
+            <strong>Online</strong>
+            <hr/>
+            <div>React:</div>
+            <div>Vue:</div>
+            <div>Angular:</div>
+            <div>Svelte:</div>
+            <br/>
+
+            <strong>Contact</strong>
+            <hr/>
+            <div>Address: 1506 Tuscaloosa Ave, Holly Hill Florida 32117</div>
+            <div>Home: (386) 226-8913</div>
+            <div>Cell: (386) 316-8485</div>
+            <div>Email: rossi.jeff@gmail.com</div>
+            <br/>
+
+        </div>
+    </div>
+</div>

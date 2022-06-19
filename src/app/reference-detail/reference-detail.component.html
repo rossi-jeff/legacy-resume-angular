@@ -1,0 +1,18 @@
+<app-bread-crumb-trail [trail]="trail"></app-bread-crumb-trail>
+<div class="card">
+    <div class="card-body">
+        <h4 *ngIf="formatName(reference.Name)" class="card-title">{{ formatName(reference.Name) }}</h4>
+        <div *ngIf="reference.Company">
+            <span>Company:</span>
+            {{ reference.Company }}
+        </div>
+        <div *ngIf="reference.Title">
+            <span>Title:</span>
+            {{ reference.Title }}
+        </div>
+        <div *ngIf="formatAddress(reference.Address)">
+            <span>Address:</span>
+            {{ formatAddress(reference.Address) }}
+        </div>
+    </div>
+</div>

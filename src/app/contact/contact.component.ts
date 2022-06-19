@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ContentUUID, contentUrl } from '../utils';
 import { HttpClient } from '@angular/common/http';
+import { GraphQlService } from '../graph-ql.service';
+import { CREATE_CONTACT_MUTATION } from '../graphql/mutations';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private graphql: GraphQlService) {}
 
   rows: any = [];
   trail = [
@@ -44,13 +46,23 @@ export class ContactComponent implements OnInit {
   emailTypes = ['Work', 'Home']
 	phoneTypes = ['Work', 'Mobile', 'Home']
 	prefered = ['Email', 'Phone']
+  timeout: any = null
 
   reset = () => {
     this.contact = JSON.parse(JSON.stringify(this.blank));
   }
 
   send = () => {
-    console.log(this.contact);
+    if (this.timeout) clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.graphql.mutate({
+        mutation: CREATE_CONTACT_MUTATION,
+        variables: this.contact
+      }).subscribe(result => {
+        console.log(result);
+        this.reset();
+      })
+    }, 100);
   }
 
   ngOnInit(): void {

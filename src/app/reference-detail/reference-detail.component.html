@@ -16,3 +16,26 @@
         </div>
     </div>
 </div>
+<div class="card" *ngIf="reference.Phones && reference.Phones.length > 0">
+    <div class="card-body">
+        <div class="card-subtitle">Phone</div>
+        <div *ngFor="let phone of reference.Phones">
+            {{ phone.Number }}
+            <span class="mx-4" *ngIf="phone.Extension">ext: {{ phone.Extension }}</span>
+        </div>
+    </div>
+</div>
+<div class="card" *ngIf="reference.Emails && reference.Emails.length > 0">
+    <div class="card-body">
+        <div class="card-subtitle">Email</div>
+        <div *ngFor="let email of reference.Emails">{{ email.Address }}</div>
+    </div>
+</div>
+<div class="card" *ngIf="reference.Comments && reference.Comments.length > 0">
+    <div class="card-body">
+        <div class="card-subtitle">Comment</div>
+        <div *ngFor="let comment of reference.Comments">
+            {{ comment.Message }}
+        </div>
+    </div>
+</div>

@@ -16,7 +16,7 @@ export class ReferenceDetailComponent implements OnInit {
   UUID: any;
   data: any = {};
   reference: any = {};
-  trail: ITrail = [
+  trail: ITrail[] = [
     { text: 'Home', href: '/' },
     { text: 'References', href: '/references' }
   ];
